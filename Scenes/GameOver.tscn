@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=1]
+[ext_resource path="res://Panels/press to play.tres" type="StyleBox" id=2]
+[ext_resource path="res://Fonts/GameOver-font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Fonts/press-font.tres" type="DynamicFont" id=5]
+
+[node name="GameOver" type="Control"]
+margin_right = 1028.0
+margin_bottom = 720.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1026.0
+margin_bottom = 725.0
+custom_styles/panel = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 251.0
+margin_top = 294.08
+margin_right = 764.0
+margin_bottom = 411.08
+custom_fonts/font = ExtResource( 4 )
+text = "Game Over"
+align = 1
+valign = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="pres" type="Label" parent="."]
+visible = false
+margin_left = 359.188
+margin_top = 541.027
+margin_right = 665.188
+margin_bottom = 575.027
+custom_fonts/font = ExtResource( 5 )
+text = "press any key to reload"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/press-font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/press to play.gd" type="Script" id=2]
+[ext_resource path="res://Panels/press to play.tres" type="StyleBox" id=3]
+
+[node name="press to play" type="Control"]
+margin_right = 1023.0
+margin_bottom = 718.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1028.0
+margin_bottom = 720.0
+custom_styles/panel = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 209.07
+margin_top = 348.99
+margin_right = 861.07
+margin_bottom = 394.99
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Presiona cualquier tecla para empezar"
+align = 1
+valign = 1
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
